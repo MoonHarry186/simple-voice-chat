@@ -8,9 +8,13 @@ const io = require("socket.io")(http);
 const socketsStatus = {};
 
 //config and set handlebars to express
-const customHandlebars = handlebars.create({ layoutsDir: "./views" });
+// const customHandlebars = handlebars.create({ layoutsDir: "./views" });
+const path = require('path');
+
+const customHandlebars = handlebars.create({ layoutsDir: path.join(__dirname, 'views') });
 
 app.engine("handlebars", customHandlebars.engine);
+app.set('views', path.join(__dirname, 'views')); // Ensure the views directory is correctly referenced
 app.set("view engine", "handlebars");
 
 //enable user access to public folder 
