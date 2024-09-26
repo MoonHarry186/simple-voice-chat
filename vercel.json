@@ -6,12 +6,7 @@
       "use": "@vercel/node"
     }
   ],
-  "headers": [
-    {
-      "source": "/files/css/(.*)", 
-      "headers": [
-        { "key": "Content-Type", "value": "text/css" }
-      ]
-    }
+  "routes": [
+    { "src": "/(.*)", "dest": "/" }
   ]
 }
