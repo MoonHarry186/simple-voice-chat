@@ -18,7 +18,7 @@ window.onload = (e) => {
   mainFunction(1000);
 };
 
-var socket = io("ws://simple-voice-chat.vercel.app/");
+var socket = io("wss://simple-voice-chat.vercel.app/");
 socket.emit("userInformation", userStatus);
 
 
