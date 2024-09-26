@@ -10,7 +10,7 @@ const socketsStatus = {};
 //config and set handlebars to express
 // const customHandlebars = handlebars.create({ layoutsDir: "./views" });
 const path = require('path');
-
+console.log(path)
 const customHandlebars = handlebars.create({ layoutsDir: path.join(__dirname, 'views') });
 
 app.engine("handlebars", customHandlebars.engine);
