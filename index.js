@@ -18,9 +18,17 @@ app.set('views', path.join(__dirname, 'views')); // Ensure the views directory i
 app.set("view engine", "handlebars");
 
 //enable user access to public folder 
-app.use("/files", express.static("public"));
+// app.use("/files", express.static("public"));
+// Set the static folder and ensure correct MIME type
+app.use("/files", express.static(path.join(__dirname, "public"), {
+  setHeaders: (res, path) => {
+    if (path.endsWith(".css")) {
+      res.setHeader("Content-Type", "text/css");
+    }
+  }
+}));
 
-app.get("/home" , (req , res)=>{
+app.get("/" , (req , res)=>{
     res.render("index");
 });
 
