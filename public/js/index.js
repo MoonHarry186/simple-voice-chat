@@ -18,7 +18,7 @@ window.onload = (e) => {
   mainFunction(1000);
 };
 
-var socket = io(`wss://simple-voice-chat.onrender.com/:${process.env.PORT || 3000}/`);
+var socket = io(`wss://simple-voice-chat.onrender.com/:${3000}/`);
 socket.emit("userInformation", userStatus);
 
 
